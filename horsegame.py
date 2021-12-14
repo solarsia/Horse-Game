@@ -4,9 +4,16 @@ import buttons
 pygame.init()
 
 dis_width = 1540
-dis_height = 800
+dis_height = 795
 
-background_colour = [30, 49, 55] # Dark Blue
+background_colour = [224, 215, 218] # Off White
+title_colour = [120, 67, 82] # Dark Pink
+start_btn_bg = [120, 67, 82]
+start_btn_txt = [224, 215, 218]
+quit_btn_bg = [120, 67, 82]
+quit_btn_txt = [224, 215, 218]
+
+myfont = pygame.font.SysFont('Comic Sans MS', 100)
 
 # Display
 display = pygame.display.set_mode((dis_width, dis_height))
@@ -18,8 +25,12 @@ def game():
     while not game_close:
         
         display.fill(background_colour)
-        b1 = buttons.button(display, (300, 300), "Quit me", 50, "red on yellow")
-        b2 = buttons.button(display, (500, 300), "Start", 50, "white on green")
+        b1 = buttons.button(display, (800, 200), "Quit me", 50, quit_btn_txt, quit_btn_bg)
+        b2 = buttons.button(display, (600, 200), "Start", 50, start_btn_txt, start_btn_bg)
+
+        title = myfont.render('Horse Game', False, title_colour)
+        title_rect = title.get_rect(center=(dis_width/2, 100))
+        display.blit(title,title_rect)
             
         #Press X to quit
         for event in pygame.event.get():
