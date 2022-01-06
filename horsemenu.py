@@ -6,6 +6,7 @@ pygame.init()
 dis_width = 1540
 dis_height = 795
 
+stable = pygame.image.load("stableeewip.png")
 background_colour = [224, 215, 218] # Off White
 title_colour = [120, 67, 82] # Dark Pink
 start_btn_bg = [120, 67, 82]
@@ -42,13 +43,13 @@ def game():
                     pygame.quit()
                 key_to_start = event.key == pygame.K_s or event.key == pygame.K_RIGHT or event.key == pygame.K_UP
                 if key_to_start:
-                    print("Ok, let's go")
+                    main.run(display)  # run game
             if event.type == pygame.MOUSEBUTTONDOWN:
                 # check when you click if the coordinates of the pointer are in the rectangle of the buttons
                 if b1.collidepoint(pygame.mouse.get_pos()):
                     pygame.quit()
                 elif b2.collidepoint(pygame.mouse.get_pos()):
-                    print("Ok, let's go")
+                    main.run(display)  # run game
         pygame.display.update()
     pygame.quit()
     quit()
