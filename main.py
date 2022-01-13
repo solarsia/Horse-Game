@@ -1,10 +1,13 @@
 import pygame
 import menu
+import buttons
 
 dis_width = 1540
 dis_height = 795
 
 stable = pygame.image.load("stableeewip.png")
+back_btn_bg = [120, 67, 82]
+back_btn_txt = [224, 215, 218]
 
 def run(display=None):
     print('[main] run')
@@ -28,10 +31,11 @@ def mainloop(display):
                 pygame.quit()
                 exit() # skip rest of code
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if event.button == 1:
+                if back.collidepoint(pygame.mouse.get_pos()):
                     menu.run(display)
 
         display.blit(stable,(0,0))
+        back = buttons.button(display, (50, 50), "Back", 50, back_btn_txt, back_btn_bg)
         pygame.display.flip()
 
 if __name__ == '__main__':
