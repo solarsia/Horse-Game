@@ -1,4 +1,5 @@
 import pygame
+import menu
 
 dis_width = 1540
 dis_height = 795
@@ -28,7 +29,7 @@ def mainloop(display):
                 exit() # skip rest of code
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
-                    return  # go back to menu
+                    menu.run(display)
 
         display.blit(stable,(0,0))
         pygame.display.flip()
