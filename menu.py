@@ -38,10 +38,12 @@ def mainloop(display):
         print('running menu ...')
 
         for event in pygame.event.get():
+            # if user presses X quit game
             if event.type == pygame.QUIT:
                 pygame.quit()
-                exit() # skip rest of code
+                exit()
             
+            # if user prsses escape quit game
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     pygame.quit()
@@ -51,6 +53,7 @@ def mainloop(display):
                 if key_to_start:
                     main.run(display)  # run game
 
+            # if user clicks on either of the buttons
             if event.type == pygame.MOUSEBUTTONDOWN:
                 # click quit button to quit
                 if b1.collidepoint(pygame.mouse.get_pos()):
