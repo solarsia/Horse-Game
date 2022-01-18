@@ -5,7 +5,7 @@ import buttons
 dis_width = 1540
 dis_height = 795
 
-stable = pygame.image.load("stableeewip.png")
+stable = pygame.image.load("stable.png")
 back_btn_bg = [120, 67, 82]
 back_btn_txt = [224, 215, 218]
 
