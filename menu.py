@@ -66,10 +66,16 @@ def mainloop(display):
         display.fill(background_colour)
 
         # display the title 
-        myfont = pygame.font.SysFont('Comic Sans MS', 100)
-        title = myfont.render('Horse Game', False, title_colour)
+        titleFont = pygame.font.SysFont('Comic Sans MS', 100)
+        title = titleFont.render('Horse Game', False, title_colour)
         title_rect = title.get_rect(center=(dis_width/2, 100))
         display.blit(title,title_rect)
+
+        # display the instructions ############### TO FIX ###############
+        instructionsFont = pygame.font.SysFont('Comic Sans MS', 40)
+        instructions = instructionsFont.render('Instructions \n X is a game where you can look after your horses. \n You can buy equipment, feed, and hay from the store. \n You can also earn money, which you can use at the store.', False, title_colour)
+        instructions_rect = instructions.get_rect(center=(dis_width/2, 300))
+        display.blit(instructions,instructions_rect)
 
         # display the buttons 
         b1 = buttons.button(display, (800, 200), "Quit me", 50, quit_btn_txt, quit_btn_bg)
