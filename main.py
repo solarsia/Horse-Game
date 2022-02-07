@@ -7,6 +7,8 @@ class Hay(pygame.sprite.Sprite):
         super().__init__()
         self.image = pygame.image.load(image_path)
         self.rect = self.image.get_rect()
+        self.rect.x = 130
+        self.rect.y = 0
 
 dis_width = 1540
 dis_height = 795
